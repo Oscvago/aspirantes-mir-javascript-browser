@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palíndromo</title>
+</head>
+<body style="background-color: #eedf8a">
+    
+    <input type="text" name="texto" id="palabra"><br/><br/>
+    <button onclick="mostrar()">Verificar palíndromo</button>
+    <p id="parrafo"></p>
+    <p id="respuesta"></p>
+
+
+   <script>
+        let input = document.getElementById("palabra");
+        let parrafo = document.getElementById("parrafo");
+        let cadena = "";
+        let revez = "";
+        let resultado = "";
+
+        function mostrar () {
+            cadena = document.getElementById("palabra").value.toLowerCase();
+            revez = cadena.split("").reverse().join("");
+            //console.log(cadena);
+            //console.log(revez);
+            if (cadena === revez) {
+                resultado = "La palabra " + cadena +  ": es palíndromo";
+            } else { 
+                resultado = "La palabra " + cadena +  ": no es palíndromo";
+            }; 
+            parrafo.textContent = resultado
+        }       
+    </script>
+</body>
+</html>
